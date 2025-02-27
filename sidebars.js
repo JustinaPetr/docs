@@ -132,10 +132,6 @@ const sidebars = {
           label: "Build with Lava RPC",
           collapsible: false,
           collapsed: false,
-          link: {
-            type: "doc",
-            id: "developer/developer",
-          },
           items: [
             {
               type: "doc",
@@ -159,13 +155,13 @@ const sidebars = {
                 },
                 {
                   type: "doc",
-                  label: "Use Lava Gateway",
-                  id: "developer/endpoints/gateway-endpoints"
+                  label: "Use Public Community Endpoints",
+                  id: "developer/endpoints/public-rpc"
                 },
                 {
                   type: "doc",
-                  label: "Use Public Community Endpoints",
-                  id: "developer/endpoints/public-rpc"
+                  label: "Use Magma Gateway",
+                  id: "developer/endpoints/gateway-endpoints"
                 },
               ],
             },
@@ -308,7 +304,7 @@ const sidebars = {
             },
             {
               type: "doc",
-              label: "2. Configure a Validator",
+              label: "2. Configure a Validator process",
               id: "validator/validator-manual",
             },
           ],
@@ -355,9 +351,33 @@ const sidebars = {
           collapsed: true,
           items: [
             {
-              type: "doc",
-              label: "1. Run nodes",
-              id: "provider/run-nodes",
+              type: "category",
+              label: "1. Run an RPC node",
+              collapsible: true,
+              collapsed: true,
+              link: {type: "doc", id: "provider/running-nodes/run-nodes"},
+              items: [
+                {
+                  type: "doc",
+                  label: "Lava",
+                  id: "provider/running-nodes/lava"
+                },
+                {
+                  type: "doc",
+                  label: "Near",
+                  id: "provider/running-nodes/near"
+                },
+                {
+                  type: "doc",
+                  label: "Ethereum",
+                  id: "provider/running-nodes/ethereum"
+                },
+                {
+                  type: "doc",
+                  label: "Avalanche",
+                  id: "provider/running-nodes/avalanche"
+                },
+              ]
             },
             {
               type: "category",
@@ -385,7 +405,7 @@ const sidebars = {
             },
             {
               type: "doc",
-              label: "4. Setup the provider",
+              label: "4. Configure provider service",
               id: "provider/provider-setup"
             }
           ],
@@ -463,8 +483,5 @@ const sidebars = {
     },
   ]
 };
-
-module.exports = sidebars;
-
 
 module.exports = sidebars;

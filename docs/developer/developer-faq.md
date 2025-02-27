@@ -1,23 +1,25 @@
 ---
-slug: /access-server-kit
-title: Server Kit
+slug: /daveloper-faq
+title: Developer FAQ
 ---
-# Lava Server Kit
 
-:::note 
-🧪
-The Lava Server Kit (referenced in code as `RPCConsumer`) is currently in an experimental phase. There may be major and breaking changes during this phase. If you are looking for simple RPC access, consider using the Gateway. If you're looking to tinker, source code is available on our [Github repository](https://github.com/lavanet/lava/tree/main/protocol/rpcconsumer)). 
-:::
-
-The **Lava Server Kit** is a GO language reference implementation that provides self-hosted gateway access to blockchain APIs, designed as a solution for running as a backend server. It is capable of accepting raw RPC queries, wrapping them up with the protocol layer, and sending them directly to providers on our network in a decentralized manner. The Lava Server Kit is highly concurrent and performant and is used in enterprise-grade applications which require high throughput and efficiency in scaling. 
+### 🟡 What rate limits do public endpoints have? {#lava-rate-limits}
+Public Lava endpoints have 3 requests/s. To access other limits go x, contact y.
 
 
+### 🟡 Using Lava with Other RPC Clients {#using-lava-with-other-rpcs}
 
-### Features
+Lava easily integrates with other RPC clients. 
 
-1. Serve multiple blockchain RPC endpoints
-2. High throughput with multiple sessions
-3. Easy setup process
+1. **Gateway** - Simply create an account on the gateway, and replace your client's RPC URL with the appopriate one. Get started [immediately](/gateway-getting-started)!
+2. **SDK** - You can also use the SDK library integrations to integrate with [viem](/viem), [cosmjs](/cosmjs), [web3.js](/web3js), or [ethers.js](/ethersjs5).
 
-### Guides
-- Community [guide](https://services.mellifera.network/testnets/lava-network/RPC_Consumer) from MELLIFERA validator
+### 🟡 I'm already using another SDK. {#using-lava-with-other-sdks}
+No problem, Lava offers integrations to existing popular libraries [here](/sdk-integrations).
+
+### 🟡 How to change the RPC url which Cosmjs uses? {#changing-cosmjs-url}
+
+If you want a native integration to use seamlessly, please check out the new Lava integration for [CosmJS](/cosmjs)!
+Alternatively, please check out the cosmolava-client created by one of our community members: [MELLIFERA-Labs/cosmolava-client](https://github.com/MELLIFERA-Labs/cosmolava-client)
+
+If you just want to switch the RPC URL you can do so using the HttpEndpoint interface on [stargate](https://cosmos.github.io/cosmjs/latest/stargate/interfaces/HttpEndpoint.html#url) or [cosmwasm-stargate](https://cosmos.github.io/cosmjs/latest/cosmwasm-stargate/interfaces/HttpEndpoint.html#url). Be sure you've grabbed the TendermintRPC endpoint from Lava or you may encounter errors.
